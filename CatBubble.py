@@ -1,7 +1,7 @@
 # Python program to display a cat bubble
 
-#comment=input('What should the cat say?')
-comment='Hello World!'
+comment=input('What should the cat say?')
+#comment='Hello World!'
 commentlen=len(comment)
 
 print('\n')
