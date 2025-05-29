@@ -4,6 +4,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+st.set_page_config(
+    page_title="Streamlit test page",
+    page_icon="👋",
+)
+
 '''
 # *Streamlit* Page
 ## _**I**_ am ~~Streamlit~~
@@ -13,21 +18,29 @@ import numpy as np
 >>> So now we get some text
 '''
 
+
 st.sidebar.title("Choose from these options")
 
-day_list1= ('Mon','Tues','Wed','Thurs','Fri')
+Language = st.sidebar.radio('Language',
+    ('English', 'French'))
+
+eng_day_list= ('Mon','Tues','Wed','Thurs','Fri')
+fr_day_list=('Lun','Mar','Mec','Jeu','Ven')
+
+if Language == 'English':
+    day_list = eng_day_list
+else:
+    day_list = fr_day_list
 df = pd.DataFrame({
-    'DOW':day_list1,
+    'DOW':day_list,
     'value':[1,2,3,0,0]
     })
 df  # 👈 Draw the dataframe
 
 
-x = st.sidebar.radio('Language',
-    ('English', 'French'))
 
-if lang == 'French':
-    lang
+if Language == 'French':
+    Language
 
 if st.sidebar.checkbox('Choose number'):
     option = st.selectbox(
